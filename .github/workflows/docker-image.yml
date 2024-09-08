@@ -30,11 +30,13 @@ jobs:
       run: |
         echo "Iniciando Build"
         docker build --tag cbermejo/docker-graphql:0.0.2 .
+        docker build --tag cbermejo/docker-graphql:latest .
 
     - name: Push Docker Image
       run: |
         echo "Iniciando Push"
         docker push cbermejo/docker-graphql:0.0.2
+        docker push cbermejo/docker-graphql:latest
         
 #    - name: Build the Docker image
 #      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
